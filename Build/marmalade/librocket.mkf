@@ -3,6 +3,11 @@ includepaths
 	../../Include
 }
 
+options
+{
+    cxx11
+}
+
 library
 {
 	".,librocket"

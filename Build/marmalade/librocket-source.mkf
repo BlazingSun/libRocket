@@ -11,7 +11,7 @@ includepaths
 
 options
 {
-   cxxflags="-std=gnu++0x"
+   cxx11
 }
 
 defines {
