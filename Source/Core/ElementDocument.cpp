@@ -398,6 +398,14 @@ void ElementDocument::ProcessEvent(RocketEvent& event)
 		{
             FocusNextTabElement(event.GetTargetElement(), !event.GetParameter<bool>("shift_key", false));
 		}
+        else if (key_identifier == Input::KI_UP)
+        {
+            FocusNextTabElement(event.GetTargetElement(), false);
+        }
+        else if (key_identifier == Input::KI_DOWN)
+        {
+            FocusNextTabElement(event.GetTargetElement(), true);
+        }
 		// Process ENTER being pressed on a focusable object (emulate click)
 		else if (key_identifier == Input::KI_RETURN ||
 				 key_identifier == Input::KI_NUMPADENTER)
