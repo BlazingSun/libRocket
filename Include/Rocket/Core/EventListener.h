@@ -29,12 +29,12 @@
 #define ROCKETCOREEVENTLISTENER_H
 
 #include "Header.h"
-#include "Event.h"
+#include "RocketEvent.h"
 
 namespace Rocket {
 namespace Core {
 
-class Event;
+class RocketEvent;
 class Element;
 
 /**
@@ -48,8 +48,8 @@ class ROCKETCORE_API EventListener
 public:
 	virtual ~EventListener() {}
 
-	/// Process the incoming Event
-	virtual void ProcessEvent(Event& event) = 0;
+	/// Process the incoming RocketEvent
+	virtual void ProcessEvent(RocketEvent& event) = 0;
 
 	/// Called when the listener has been attached to a new Element
 	virtual void OnAttach(Element* ROCKET_UNUSED_PARAMETER(element))

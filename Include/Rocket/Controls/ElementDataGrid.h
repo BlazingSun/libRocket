@@ -120,7 +120,7 @@ public:
 protected:
 	virtual void OnUpdate();
 
-	virtual void ProcessEvent(Core::Event& event);
+	virtual void ProcessEvent(Core::RocketEvent& event);
 
 	/// Gets the markup and content of the element.
 	/// @param content[out] The content of the element.

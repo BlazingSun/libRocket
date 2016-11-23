@@ -32,7 +32,7 @@
 #include "ScriptInterface.h"
 #include "Header.h"
 #include "Box.h"
-#include "Event.h"
+#include "RocketEvent.h"
 #include "Property.h"
 #include "Types.h"
 
@@ -483,12 +483,12 @@ public:
 	void Click();
 
 	/// Adds an event listener to this element.
-	/// @param[in] event Event to attach to.
+	/// @param[in] event RocketEvent to attach to.
 	/// @param[in] listener The listener object to be attached.
 	/// @param[in] in_capture_phase True to attach in the capture phase, false in bubble phase.
 	void AddEventListener(const String& event, EventListener* listener, bool in_capture_phase = false);
 	/// Removes an event listener from this element.
-	/// @param[in] event Event to detach from.
+	/// @param[in] event RocketEvent to detach from.
 	/// @param[in] listener The listener object to be detached.
 	/// @param[in] in_capture_phase True to detach from the capture phase, false from the bubble phase.
 	void RemoveEventListener(const String& event, EventListener* listener, bool in_capture_phase = false);
@@ -575,7 +575,7 @@ public:
 
 	/// Called for every event sent to this element or one of its descendants.
 	/// @param[in] event The event to process.
-	virtual void ProcessEvent(Event& event);
+	virtual void ProcessEvent(RocketEvent& event);
 	
 	/// Update the element's layout if required.
 	void UpdateLayout();

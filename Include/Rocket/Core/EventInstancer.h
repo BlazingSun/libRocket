@@ -35,7 +35,7 @@ namespace Rocket {
 namespace Core {
 
 class Element;
-class Event;
+class RocketEvent;
 
 /**
 	Abstract instancer interface for instancing events. This is required to be overridden for scripting systems.
@@ -53,11 +53,11 @@ public:
 	/// @param[in] name Name of this event.
 	/// @param[in] parameters Additional parameters for this event.
 	/// @param[in] interruptible If the event propagation can be stopped.
-	virtual Event* InstanceEvent(Element* target, const String& name, const Dictionary& parameters, bool interruptible) = 0;
+	virtual RocketEvent* InstanceEvent(Element* target, const String& name, const Dictionary& parameters, bool interruptible) = 0;
 
 	/// Releases an event instanced by this instancer.
 	/// @param[in] event The event to release.
-	virtual void ReleaseEvent(Event* event) = 0;
+	virtual void ReleaseEvent(RocketEvent* event) = 0;
 
 	/// Releases this event instancer.
 	virtual void Release() = 0;

@@ -148,7 +148,7 @@ protected:
 	virtual bool IsLayoutDirty();
 
 	/// Processes the 'onpropertychange' event, checking for a change in position or size.
-	virtual void ProcessEvent(Event& event);
+	virtual void ProcessEvent(RocketEvent& event);
 
 private:
 	// Find the next element to focus, starting at the current element

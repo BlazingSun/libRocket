@@ -84,7 +84,7 @@ public:
 
 protected:
 	/// Handles the 'onchange' events for the scrollbars.
-	void ProcessEvent(Event& event);
+	void ProcessEvent(RocketEvent& event);
 
 private:
 	struct Scrollbar

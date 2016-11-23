@@ -51,7 +51,7 @@ public:
 	int GetColumn();
 
 protected:
-	virtual void ProcessEvent(Core::Event& event);
+	virtual void ProcessEvent(Core::RocketEvent& event);
 
 private:
 	int column;
