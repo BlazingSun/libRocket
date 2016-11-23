@@ -172,7 +172,7 @@ files
 	ElementTextDefault.cpp
 	ElementTextDefault.h
 	ElementUtilities.cpp
-	Event.cpp
+	RocketEvent.cpp
 	EventDispatcher.cpp
 	EventDispatcher.h
 	EventInstancer.cpp
@@ -352,7 +352,7 @@ files
 	ElementScroll.h
 	ElementText.h
 	ElementUtilities.h
-	Event.h
+	RocketEvent.h
 	EventInstancer.h
 	EventListener.h
 	EventListenerInstancer.h

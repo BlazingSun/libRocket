@@ -32,7 +32,7 @@
 #include "FontFaceHandle.h"
 #include "../../Include/Rocket/Core/ElementDocument.h"
 #include "../../Include/Rocket/Core/ElementUtilities.h"
-#include "../../Include/Rocket/Core/Event.h"
+#include "../../Include/Rocket/Core/RocketEvent.h"
 #include "../../Include/Rocket/Core/FontDatabase.h"
 #include "../../Include/Rocket/Core/Property.h"
 #include "../../Include/Rocket/Core/StyleSheetKeywords.h"

@@ -50,11 +50,11 @@ public:
 	/// @param[in] name Name of this event.
 	/// @param[in] parameters Additional parameters for this event.
 	/// @param[in] interruptible If the event propagation can be stopped.
-	virtual Event* InstanceEvent(Element* target, const String& name, const Dictionary& parameters, bool interruptible);
+	virtual RocketEvent* InstanceEvent(Element* target, const String& name, const Dictionary& parameters, bool interruptible);
 
 	/// Releases an event instanced by this instancer.
 	/// @param[in] event The event to release.
-	virtual void ReleaseEvent(Event* event);
+	virtual void ReleaseEvent(RocketEvent* event);
 
 	/// Releases this event instancer.
 	virtual void Release();

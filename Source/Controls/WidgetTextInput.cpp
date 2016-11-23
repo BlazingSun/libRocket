@@ -244,7 +244,7 @@ void WidgetTextInput::DispatchChangeEvent(bool linebreak)
 
 // Processes the "keydown" and "textinput" event to write to the input field, and the "focus" and "blur" to set
 // the state of the cursor.
-void WidgetTextInput::ProcessEvent(Core::Event& event)
+void WidgetTextInput::ProcessEvent(Core::RocketEvent& event)
 {
 	if (event == "resize")
 	{

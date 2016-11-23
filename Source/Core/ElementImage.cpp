@@ -157,7 +157,7 @@ void ElementImage::OnAttributeChange(const Rocket::Core::AttributeNameList& chan
 }
 
 // Regenerates the element's geometry.
-void ElementImage::ProcessEvent(Rocket::Core::Event& event)
+void ElementImage::ProcessEvent(Rocket::Core::RocketEvent& event)
 {
 	Element::ProcessEvent(event);
 

@@ -142,7 +142,7 @@ int ElementTabSet::GetActiveTab() const
 }
 
 // Process the incoming event.
-void ElementTabSet::ProcessEvent(Core::Event& event)
+void ElementTabSet::ProcessEvent(Core::RocketEvent& event)
 {
 	Core::Element::ProcessEvent(event);
 

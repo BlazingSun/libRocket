@@ -40,7 +40,7 @@ ElementDataGridExpandButton::~ElementDataGridExpandButton()
 {
 }
 
-void ElementDataGridExpandButton::ProcessEvent(Core::Event& event)
+void ElementDataGridExpandButton::ProcessEvent(Core::RocketEvent& event)
 {
 	Core::Element::ProcessEvent(event);
 

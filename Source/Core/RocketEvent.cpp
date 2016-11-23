@@ -26,13 +26,13 @@
  */
 
 #include "precompiled.h"
-#include "../../Include/Rocket/Core/Event.h"
+#include "../../Include/Rocket/Core/RocketEvent.h"
 #include "../../Include/Rocket/Core/EventInstancer.h"
 
 namespace Rocket {
 namespace Core {
 
-Event::Event()
+RocketEvent::RocketEvent()
 {
 	phase = PHASE_UNKNOWN;
 	interruped = false;
@@ -41,58 +41,58 @@ Event::Event()
 	target_element = NULL;
 }
 
-Event::Event(Element* _target_element, const String& _type, const Dictionary& _parameters, bool _interruptible) : type(_type), parameters(_parameters), target_element(_target_element), interruptible(_interruptible)
+RocketEvent::RocketEvent(Element* _target_element, const String& _type, const Dictionary& _parameters, bool _interruptible) : type(_type), parameters(_parameters), target_element(_target_element), interruptible(_interruptible)
 {
 	phase = PHASE_UNKNOWN;
 	interruped = false;
 	current_element = NULL;
 }
 
-Event::~Event()
+RocketEvent::~RocketEvent()
 {
 }
 
-void Event::SetCurrentElement(Element* element)
+void RocketEvent::SetCurrentElement(Element* element)
 {
 	current_element = element;
 }
 
-Element* Event::GetCurrentElement() const
+Element* RocketEvent::GetCurrentElement() const
 {
 	return current_element;
 }
 
-Element* Event::GetTargetElement() const
+Element* RocketEvent::GetTargetElement() const
 {
 	return target_element;
 }
 
-const String& Event::GetType() const
+const String& RocketEvent::GetType() const
 {
 	return type;
 }
 
-bool Event::operator==(const String& _type) const
+bool RocketEvent::operator==(const String& _type) const
 {
 	return type == _type;
 }
 
-void Event::SetPhase(EventPhase _phase)
+void RocketEvent::SetPhase(EventPhase _phase)
 {
 	phase = _phase;
 }
 
-Event::EventPhase Event::GetPhase() const
+RocketEvent::EventPhase RocketEvent::GetPhase() const
 {
 	return phase;
 }
 
-bool Event::IsPropagating() const
+bool RocketEvent::IsPropagating() const
 {
 	return !interruped;
 }
 
-void Event::StopPropagation()
+void RocketEvent::StopPropagation()
 {
 	// Set interruped to true if we can be interruped
 	if (interruptible) 
@@ -101,12 +101,12 @@ void Event::StopPropagation()
 	}
 }
 
-const Dictionary* Event::GetParameters() const
+const Dictionary* RocketEvent::GetParameters() const
 {
 	return &parameters;
 }
 
-void Event::OnReferenceDeactivate()
+void RocketEvent::OnReferenceDeactivate()
 {
 	instancer->ReleaseEvent(this);
 }

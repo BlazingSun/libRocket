@@ -82,7 +82,7 @@ public:
 	int GetActiveTab() const;
 
 	/// Process the incoming event.
-	void ProcessEvent(Core::Event& event);
+	void ProcessEvent(Core::RocketEvent& event);
 
 	/// Called when the listener has been attached to a new Element
 	void OnAttach(Element* element);

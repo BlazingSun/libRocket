@@ -378,7 +378,7 @@ Core::Element* WidgetSlider::GetParent() const
 }
 
 // Handles events coming through from the slider's components.
-void WidgetSlider::ProcessEvent(Core::Event& event)
+void WidgetSlider::ProcessEvent(Core::RocketEvent& event)
 {
 	if (parent->IsDisabled())
 		return;

@@ -29,7 +29,7 @@
 #include "../../Include/Rocket/Controls/DataSource.h"
 #include "../../Include/Rocket/Core/Math.h"
 #include "../../Include/Rocket/Core/XMLParser.h"
-#include "../../Include/Rocket/Core/Event.h"
+#include "../../Include/Rocket/Core/RocketEvent.h"
 #include "../../Include/Rocket/Core/ElementDocument.h"
 #include "../../Include/Rocket/Core/Factory.h"
 #include "../../Include/Rocket/Core/Property.h"
@@ -246,7 +246,7 @@ void ElementDataGrid::OnUpdate()
 	document->LockLayout(false);
 }
 
-void ElementDataGrid::ProcessEvent(Core::Event& event)
+void ElementDataGrid::ProcessEvent(Core::RocketEvent& event)
 {
 	Core::Element::ProcessEvent(event);
 

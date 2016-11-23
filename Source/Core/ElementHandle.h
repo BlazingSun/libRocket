@@ -50,7 +50,7 @@ public:
 
 protected:
 	virtual void OnAttributeChange(const AttributeNameList& changed_attributes);
-	virtual void ProcessEvent(Event& event);
+	virtual void ProcessEvent(RocketEvent& event);
 
 	Vector2i drag_start;
 	Vector2f move_original_position;

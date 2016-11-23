@@ -55,7 +55,7 @@ bool InputTypeButton::IsSubmitted()
 }
 
 // Checks for necessary functional changes in the control as a result of the event.
-void InputTypeButton::ProcessEvent(Core::Event& event)
+void InputTypeButton::ProcessEvent(Core::RocketEvent& event)
 {
 	// Stop a click event from proceeding any further if this button is disabled.
 	if (event.GetTargetElement() == element &&

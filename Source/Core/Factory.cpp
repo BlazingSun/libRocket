@@ -65,7 +65,7 @@ static ContextInstancer* context_instancer = NULL;
 // The event instancer
 static EventInstancer* event_instancer = NULL;
 
-// Event listener instancer.
+// RocketEvent listener instancer.
 EventListenerInstancer *Factory::event_listener_instancer = NULL;
 
 PropertyParserColour *Factory::colour_parser = NULL;
@@ -553,9 +553,9 @@ EventInstancer* Factory::RegisterEventInstancer(EventInstancer* instancer)
 }
 
 // Instance an event object.
-Event* Factory::InstanceEvent(Element* target, const String& name, const Dictionary& parameters, bool interruptible)
+RocketEvent* Factory::InstanceEvent(Element* target, const String& name, const Dictionary& parameters, bool interruptible)
 {
-	Event* event = event_instancer->InstanceEvent(target, name, parameters, interruptible);
+	RocketEvent* event = event_instancer->InstanceEvent(target, name, parameters, interruptible);
 	if (event != NULL)
 		event->instancer = event_instancer;
 

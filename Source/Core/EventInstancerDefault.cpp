@@ -27,7 +27,7 @@
 
 #include "precompiled.h"
 #include "EventInstancerDefault.h"
-#include "../../Include/Rocket/Core/Event.h"
+#include "../../Include/Rocket/Core/RocketEvent.h"
 
 namespace Rocket {
 namespace Core {
@@ -40,13 +40,13 @@ EventInstancerDefault::~EventInstancerDefault()
 {
 }
 
-Event* EventInstancerDefault::InstanceEvent(Element* target, const String& name, const Dictionary& parameters, bool interruptible)
+RocketEvent* EventInstancerDefault::InstanceEvent(Element* target, const String& name, const Dictionary& parameters, bool interruptible)
 {
-	return new Event(target, name, parameters, interruptible);
+	return new RocketEvent(target, name, parameters, interruptible);
 }
 
 // Releases an event instanced by this instancer.
-void EventInstancerDefault::ReleaseEvent(Event* event)
+void EventInstancerDefault::ReleaseEvent(RocketEvent* event)
 {
 	delete event;
 }

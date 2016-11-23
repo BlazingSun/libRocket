@@ -28,7 +28,7 @@
 #include "precompiled.h"
 #include "EventDispatcher.h"
 #include "../../Include/Rocket/Core/Element.h"
-#include "../../Include/Rocket/Core/Event.h"
+#include "../../Include/Rocket/Core/RocketEvent.h"
 #include "../../Include/Rocket/Core/EventListener.h"
 #include "../../Include/Rocket/Core/Factory.h"
 
@@ -112,8 +112,8 @@ void EventDispatcher::DetachAllEvents()
 
 bool EventDispatcher::DispatchEvent(Element* target_element, const String& name, const Dictionary& parameters, bool interruptible)
 {
-	//Event event(target_element, name, parameters, interruptible);
-	Event* event = Factory::InstanceEvent(target_element, name, parameters, interruptible);
+	//RocketEvent event(target_element, name, parameters, interruptible);
+	RocketEvent* event = Factory::InstanceEvent(target_element, name, parameters, interruptible);
 	if (event == NULL)
 		return false;
 
@@ -128,7 +128,7 @@ bool EventDispatcher::DispatchEvent(Element* target_element, const String& name,
 		walk_element = walk_element->GetParentNode();
 	}
 
-	event->SetPhase(Event::PHASE_CAPTURE);
+	event->SetPhase(RocketEvent::PHASE_CAPTURE);
 	// Capture phase - root, to target (only events that have registered as capture events)
 	// Note: We walk elements in REVERSE as they're placed in the list from the elements parent to the root
 	for (int i = (int)elements.size() - 1; i >= 0 && event->IsPropagating(); i--) 
@@ -141,14 +141,14 @@ bool EventDispatcher::DispatchEvent(Element* target_element, const String& name,
 	// Target phase - direct at the target
 	if (event->IsPropagating()) 
 	{
-		event->SetPhase(Event::PHASE_TARGET);
+		event->SetPhase(RocketEvent::PHASE_TARGET);
 		event->SetCurrentElement(target_element);
 		TriggerEvents(event);
 	}
 
 	if (event->IsPropagating()) 
 	{
-		event->SetPhase(Event::PHASE_BUBBLE);
+		event->SetPhase(RocketEvent::PHASE_BUBBLE);
 		// Bubble phase - target to root (normal event bindings)
 		for (size_t i = 0; i < elements.size() && event->IsPropagating(); i++) 
 		{
@@ -163,7 +163,7 @@ bool EventDispatcher::DispatchEvent(Element* target_element, const String& name,
 	return propagating;
 }
 
-void EventDispatcher::TriggerEvents(Event* event)
+void EventDispatcher::TriggerEvents(RocketEvent* event)
 {
 	// Look up the event
 	Events::iterator itr = events.find(event->GetType());
@@ -172,7 +172,7 @@ void EventDispatcher::TriggerEvents(Event* event)
 	{
 		// Dispatch all actions
 		Listeners& listeners = (*itr).second;
-		if (event->GetPhase() == Event::PHASE_TARGET)
+		if (event->GetPhase() == RocketEvent::PHASE_TARGET)
 		{
 			// Fire all listeners waiting for bubble events before we send the event to the target itself.
 			for (size_t i = 0; i < listeners.size() && event->IsPropagating(); i++) 
@@ -198,7 +198,7 @@ void EventDispatcher::TriggerEvents(Event* event)
 		}
 		else
 		{
-			bool in_capture_phase = event->GetPhase() == Event::PHASE_CAPTURE;
+			bool in_capture_phase = event->GetPhase() == RocketEvent::PHASE_CAPTURE;
 
 			for (size_t i = 0; i < listeners.size() && event->IsPropagating(); i++) 
 			{
@@ -209,7 +209,7 @@ void EventDispatcher::TriggerEvents(Event* event)
 		}
 	}
 
-	if (event->GetPhase() != Event::PHASE_CAPTURE)
+	if (event->GetPhase() != RocketEvent::PHASE_CAPTURE)
 	{
 		// Send the event to the target element.
 		element->ProcessEvent(*event);

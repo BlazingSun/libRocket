@@ -56,7 +56,7 @@ public:
 
 protected:
 	virtual void OnRender();
-	virtual void ProcessEvent(Core::Event& event);
+	virtual void ProcessEvent(Core::RocketEvent& event);
 
 private:
 	struct LogMessage

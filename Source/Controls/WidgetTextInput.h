@@ -85,7 +85,7 @@ public:
 protected:
 	/// Processes the "keydown" and "textinput" event to write to the input field, and the "focus" and
 	/// "blur" to set the state of the cursor.
-	virtual void ProcessEvent(Core::Event& event);
+	virtual void ProcessEvent(Core::RocketEvent& event);
 
 	/// Adds a new character to the string at the cursor position.
 	/// @param[in] character The character to add to the string.

@@ -116,7 +116,7 @@ void ElementInfo::RenderSourceElement()
 	}
 }
 
-void ElementInfo::ProcessEvent(Core::Event& event)
+void ElementInfo::ProcessEvent(Core::RocketEvent& event)
 {
 	Core::ElementDocument::ProcessEvent(event);
 

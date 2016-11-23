@@ -86,7 +86,7 @@ protected:
 
 	/// Regenerates the element's geometry on a resize event.
 	/// @param[in] event The event to process.
-	virtual void ProcessEvent(Event& event);
+	virtual void ProcessEvent(RocketEvent& event);
 
 private:
 	// Generates the element's geometry.

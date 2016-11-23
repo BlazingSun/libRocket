@@ -26,7 +26,7 @@
  */
 
 #include "../../Include/Rocket/Controls/ElementDataGridCell.h"
-#include "../../Include/Rocket/Core/Event.h"
+#include "../../Include/Rocket/Core/RocketEvent.h"
 #include "../../Include/Rocket/Core/Property.h"
 #include "../../Include/Rocket/Controls/ElementDataGrid.h"
 
@@ -62,7 +62,7 @@ int ElementDataGridCell::GetColumn()
 	return column;
 }
 
-void ElementDataGridCell::ProcessEvent(Core::Event& event)
+void ElementDataGridCell::ProcessEvent(Core::RocketEvent& event)
 {
 	Core::Element::ProcessEvent(event);
 

@@ -384,19 +384,19 @@ void ElementDocument::OnPropertyChange(const PropertyNameList& changed_propertie
 }
 
 // Processes the 'onpropertychange' event, checking for a change in position or size.
-void ElementDocument::ProcessEvent(Event& event)
+void ElementDocument::ProcessEvent(RocketEvent& event)
 {
 	Element::ProcessEvent(event);
 
 	// Process generic keyboard events for this window in capture phase
-	if (event.GetPhase() == Event::PHASE_BUBBLE && event == KEYDOWN)
+	if (event.GetPhase() == RocketEvent::PHASE_BUBBLE && event == KEYDOWN)
 	{
 		int key_identifier = event.GetParameter<int>("key_identifier", Input::KI_UNKNOWN);
 
 		// Process TAB
 		if (key_identifier == Input::KI_TAB)
 		{
-			FocusNextTabElement(event.GetTargetElement(), !event.GetParameter<bool>("shift_key", false));
+            FocusNextTabElement(event.GetTargetElement(), !event.GetParameter<bool>("shift_key", false));
 		}
 		// Process ENTER being pressed on a focusable object (emulate click)
 		else if (key_identifier == Input::KI_RETURN ||

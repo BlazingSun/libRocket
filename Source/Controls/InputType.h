@@ -29,7 +29,7 @@
 #define ROCKETCONTROLSINPUTTYPE_H
 
 #include "../../Include/Rocket/Core/String.h"
-#include "../../Include/Rocket/Core/Event.h"
+#include "../../Include/Rocket/Core/RocketEvent.h"
 #include "../../Include/Rocket/Core/Types.h"
 
 namespace Rocket {
@@ -78,7 +78,7 @@ public:
 
 	/// Checks for necessary functional changes in the control as a result of the event.
 	/// @param[in] event The event to process.
-	virtual void ProcessEvent(Core::Event& event) = 0;
+	virtual void ProcessEvent(Core::RocketEvent& event) = 0;
 
 	/// Sizes the dimensions to the element's inherent size.
 	/// @return True.

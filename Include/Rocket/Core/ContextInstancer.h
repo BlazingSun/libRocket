@@ -35,7 +35,7 @@ namespace Rocket {
 namespace Core {
 
 class Context;
-class Event;
+class RocketEvent;
 
 /**
 	Abstract instancer interface for instancing contexts.

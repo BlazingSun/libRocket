@@ -47,7 +47,7 @@ bool InputTypeSubmit::IsSubmitted()
 }
 
 // Checks for necessary functional changes in the control as a result of the event.
-void InputTypeSubmit::ProcessEvent(Core::Event& event)
+void InputTypeSubmit::ProcessEvent(Core::RocketEvent& event)
 {
 	if (event == "click" &&
 		!element->IsDisabled())

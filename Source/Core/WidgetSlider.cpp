@@ -30,7 +30,7 @@
 #include "Clock.h"
 #include "LayoutEngine.h"
 #include "../../Include/Rocket/Core/Element.h"
-#include "../../Include/Rocket/Core/Event.h"
+#include "../../Include/Rocket/Core/RocketEvent.h"
 #include "../../Include/Rocket/Core/Factory.h"
 #include "../../Include/Rocket/Core/Property.h"
 
@@ -382,7 +382,7 @@ Element* WidgetSlider::GetParent() const
 }
 
 // Handles events coming through from the slider's components.
-void WidgetSlider::ProcessEvent(Event& event)
+void WidgetSlider::ProcessEvent(RocketEvent& event)
 {
 	if (event.GetTargetElement() == bar)
 	{

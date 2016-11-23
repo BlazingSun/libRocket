@@ -42,7 +42,7 @@ class DecoratorInstancer;
 class Element;
 class ElementDocument;
 class ElementInstancer;
-class Event;
+class RocketEvent;
 class EventInstancer;
 class EventListener;
 class EventListenerInstancer;
@@ -163,7 +163,7 @@ public:
 	/// @param[in] parameters Additional parameters for this event.
 	/// @param[in] interruptible If the event propagation can be stopped.
 	/// @return The instanced event.
-	static Event* InstanceEvent(Element* target, const String& name, const Dictionary& parameters, bool interruptible);
+	static RocketEvent* InstanceEvent(Element* target, const String& name, const Dictionary& parameters, bool interruptible);
 
 	/// Register the instancer to be used for all event listeners.
 	/// @return The registered instancer on success, NULL on failure.

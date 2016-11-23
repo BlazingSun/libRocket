@@ -79,7 +79,7 @@ static const char* menu_rcss =
 static const char* menu_rml =
 "<div id=\"version-info\">libRocket <span id=\"version-number\"></span></div>\n"
 "<div id =\"button-group\">\n"
-"	<button id =\"event-log-button\">Event Log</button>\n"
+"	<button id =\"event-log-button\">RocketEvent Log</button>\n"
 "	<button id =\"debug-info-button\">Element Info</button>\n"
 "	<button id =\"outlines-button\">Outlines</button>\n"
 "</div>\n";

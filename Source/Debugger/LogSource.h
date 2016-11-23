@@ -84,7 +84,7 @@ static const char* log_rml =
 "			<div id=\"info_button\" class=\"button info\">Off</div>\n"
 "			<div id=\"debug_button\" class=\"button debug last\">On</div>\n"
 "		</div>\n"
-"		<div style=\"width: 100px;\">Event Log</div>\n"
+"		<div style=\"width: 100px;\">RocketEvent Log</div>\n"
 "	</handle>\n"
 "</h1>\n"
 "<div id=\"content\">\n"

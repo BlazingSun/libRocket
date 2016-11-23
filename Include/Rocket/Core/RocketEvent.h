@@ -45,19 +45,19 @@ class EventInstancer;
 	@author Lloyd Weehuizen
  */
 
-class ROCKETCORE_API Event : public ScriptInterface
+class ROCKETCORE_API RocketEvent : public ScriptInterface
 {
 public:
 	/// Constructor
-	Event();
+	RocketEvent();
 	/// Constructor
 	/// @param[in] target The target element of this event
 	/// @param[in] type The event type
 	/// @param[in] parameters The event parameters
 	/// @param[in] interruptible Can this event have is propagation stopped?
-	Event(Element* target, const String& type, const Dictionary& parameters, bool interruptible = false);
+	RocketEvent(Element* target, const String& type, const Dictionary& parameters, bool interruptible = false);
 	/// Destructor
-	virtual ~Event();
+	virtual ~RocketEvent();
 
 	enum EventPhase { PHASE_UNKNOWN, PHASE_CAPTURE, PHASE_TARGET, PHASE_BUBBLE };
 

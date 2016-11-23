@@ -26,7 +26,7 @@
  */
 
 #include "../../Include/Rocket/Controls/ElementFormControlInput.h"
-#include "../../Include/Rocket/Core/Event.h"
+#include "../../Include/Rocket/Core/RocketEvent.h"
 #include "InputTypeButton.h"
 #include "InputTypeCheckbox.h"
 #include "InputTypeRadio.h"
@@ -150,7 +150,7 @@ void ElementFormControlInput::OnChildRemove(Rocket::Core::Element* child)
 }
 
 // Handles the "click" event to toggle the control's checked status.
-void ElementFormControlInput::ProcessEvent(Core::Event& event)
+void ElementFormControlInput::ProcessEvent(Core::RocketEvent& event)
 {
 	ElementFormControl::ProcessEvent(event);
 	type->ProcessEvent(event);

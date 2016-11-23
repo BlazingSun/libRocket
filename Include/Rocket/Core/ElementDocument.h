@@ -148,11 +148,12 @@ protected:
 	virtual bool IsLayoutDirty();
 
 	/// Processes the 'onpropertychange' event, checking for a change in position or size.
-	virtual void ProcessEvent(Event& event);
+	virtual void ProcessEvent(RocketEvent& event);
 
 private:
 	// Find the next element to focus, starting at the current element
 	bool FocusNextTabElement(Element* current_element, bool forward);
+
 	/// Searches forwards or backwards for a focusable element in the given substree
 	bool SearchFocusSubtree(Element* element, bool forward);
 

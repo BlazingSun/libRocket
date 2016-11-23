@@ -30,7 +30,7 @@
 #include "../../Include/Rocket/Core/ElementDocument.h"
 #include "../../Include/Rocket/Core/ElementUtilities.h"
 #include "../../Include/Rocket/Core/Property.h"
-#include "../../Include/Rocket/Core/Event.h"
+#include "../../Include/Rocket/Core/RocketEvent.h"
 
 namespace Rocket {
 namespace Core {
@@ -63,7 +63,7 @@ void ElementHandle::OnAttributeChange(const PropertyNameList& changed_attributes
 	}
 }
 
-void ElementHandle::ProcessEvent(Event& event)
+void ElementHandle::ProcessEvent(RocketEvent& event)
 {
 	Element::ProcessEvent(event);
 

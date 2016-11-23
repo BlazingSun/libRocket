@@ -92,9 +92,9 @@ public:
 	/// @param[in] element The destroyed element.
 	virtual void OnElementDestroy(Core::Element* element);
 
-	/// Event handler for events from the debugger elements.
+	/// RocketEvent handler for events from the debugger elements.
 	/// @param[in] event The event to process.
-	virtual void ProcessEvent(Core::Event& event);
+	virtual void ProcessEvent(Core::RocketEvent& event);
 
 	/// Access the singleton instance of the debugger
 	/// @return NULL or an instance of the plugin

@@ -31,7 +31,7 @@
 #include "WidgetSliderScroll.h"
 #include "../../Include/Rocket/Core/Element.h"
 #include "../../Include/Rocket/Core/ElementUtilities.h"
-#include "../../Include/Rocket/Core/Event.h"
+#include "../../Include/Rocket/Core/RocketEvent.h"
 #include "../../Include/Rocket/Core/Factory.h"
 
 namespace Rocket {
@@ -214,7 +214,7 @@ void ElementScroll::FormatScrollbars()
 }
 
 // Handles the 'onchange' events for the scrollbars.
-void ElementScroll::ProcessEvent(Event& event)
+void ElementScroll::ProcessEvent(RocketEvent& event)
 {
 	if (event == "scrollchange")
 	{

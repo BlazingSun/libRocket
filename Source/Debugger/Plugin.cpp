@@ -253,8 +253,8 @@ void Plugin::OnElementDestroy(Core::Element* element)
 		info_element->OnElementDestroy(element);
 }
 
-// Event handler for events from the debugger elements.
-void Plugin::ProcessEvent(Core::Event& event)
+// RocketEvent handler for events from the debugger elements.
+void Plugin::ProcessEvent(Core::RocketEvent& event)
 {
 	if (event == "click")
 	{

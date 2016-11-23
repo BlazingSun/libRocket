@@ -29,7 +29,7 @@
 #define ROCKETCOREEVENTDISPATCHER_H
 
 #include "../../Include/Rocket/Core/String.h"
-#include "../../Include/Rocket/Core/Event.h"
+#include "../../Include/Rocket/Core/RocketEvent.h"
 #include <map>
 
 namespace Rocket {
@@ -39,7 +39,7 @@ class Element;
 class EventListener;
 
 /**
-	The Event Dispatcher manages a list of event listeners (based on URL) and triggers the events via EventHandlers
+	The RocketEvent Dispatcher manages a list of event listeners (based on URL) and triggers the events via EventHandlers
 	whenever requested.
 
 	@author Lloyd Weehuizen
@@ -91,7 +91,7 @@ private:
 	typedef std::map< String, Listeners > Events;
 	Events events;
 
-	void TriggerEvents(Event* event);
+	void TriggerEvents(RocketEvent* event);
 };
 
 }

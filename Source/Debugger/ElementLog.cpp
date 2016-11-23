@@ -223,7 +223,7 @@ void ElementLog::OnRender()
 	}
 }
 
-void ElementLog::ProcessEvent(Core::Event& event)
+void ElementLog::ProcessEvent(Core::RocketEvent& event)
 {
 	Core::Element::ProcessEvent(event);
 

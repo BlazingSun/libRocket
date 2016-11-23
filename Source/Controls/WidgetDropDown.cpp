@@ -29,7 +29,7 @@
 #include "../../Include/Rocket/Core/Math.h"
 #include "../../Include/Rocket/Core/Factory.h"
 #include "../../Include/Rocket/Core/ElementUtilities.h"
-#include "../../Include/Rocket/Core/Event.h"
+#include "../../Include/Rocket/Core/RocketEvent.h"
 #include "../../Include/Rocket/Core/Input.h"
 #include "../../Include/Rocket/Core/Property.h"
 #include "../../Include/Rocket/Core/StyleSheetKeywords.h"
@@ -275,7 +275,7 @@ int WidgetDropDown::GetNumOptions() const
 	return (int) options.size();
 }
 
-void WidgetDropDown::ProcessEvent(Core::Event& event)
+void WidgetDropDown::ProcessEvent(Core::RocketEvent& event)
 {
 	if (parent_element->IsDisabled()) 
 		return;
